@@ -1,0 +1,11 @@
+[Unit]
+Description=Reset intel I217V NIC PCI device after system boot
+Requires=local-fs-pre.target
+After=local-fs-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c /home/fvdnabee/GIT/linux-scripts/reset-intel-I217V/reset-intel-I217V.sh
+
+[Install]
+WantedBy=local-fs-pre.target
